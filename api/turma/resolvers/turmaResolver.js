@@ -1,24 +1,7 @@
-const turmas = [
-  {
-    id: 1,
-    descricao: 'básico',
-  },
-  {
-    id: 2,
-    descricao: 'intermediário',
-  },
-  {
-    id: 3,
-    descricao: 'avançado',
-  }
-]
-
-const turmaResolver = {
+const turmaResolvers = {
   Query: {
-    turmas: (parent, args, context, info) => {
-      return turmas
-    }
+    turmas: (_, __, {dataSources}) => dataSources.turmasAPI.getTurmas(),
   },
 }
 
-module.exports = turmaResolver
+module.exports = turmaResolvers

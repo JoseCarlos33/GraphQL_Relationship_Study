@@ -8,9 +8,11 @@ const UsersAPI = require('./user/datasource/user')
 
 const turmaSchema = require('./turma/schema/turma.graphql')
 const turmaResolvers = require('./turma/resolvers/turmaResolver')
+const TurmasAPI = require('./turma/datasource/turma')
 
 const typeDefs = mergeTypeDefs([userSchema, turmaSchema])
 const resolvers = [userResolvers, turmaResolvers]
+
 
 const dbConfig = {
   client: 'sqlite3',
